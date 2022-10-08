@@ -1,7 +1,7 @@
 #!/bin/bash
 # Use this script to install tomcat in rehat servers
 echo delete the failed version of tomcat
-sudo rm -rf /opt/tomcat10
+sudo rm -rf /opt/tomcat9
 echo assign a hostname to your server 
 sudo hostname tomcat
 # install Java JDK 1.8+ as a pre-requisit for tomcat to run.
@@ -11,12 +11,12 @@ sudo yum install java-1.8.0-openjdk-devel
 # Download tomcat software and extract it.
 sudo yum install wget unzip -y
 
-sudo wget https://dlcdn.apache.org/tomcat/tomcat-10/v10.0.23/bin/apache-tomcat-10.0.23-deployer.tar.gz
-sudo tar -xvf apache-tomcat-10.0.23-deployersudo .tar.gz
-sudo rm apache-tomcat-10.0.23.tar.gz
-sudo mv apache-tomcat-10.0.23 tomcat10
-sudo chown ec2-user -R /opt/tomcat10
-sh /opt/tomcat10/bin/startup.sh
+sudo wget https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.65/bin/apache-tomcat-9.0.65-deployer.tar.gz
+sudo tar -xvf apache-tomcat-9.0.65-deployersudo .tar.gz
+sudo rm apache-tomcat-9.0.65.tar.gz
+sudo mv apache-tomcat-9.0.65 tomcat9
+sudo chown ec2-user -R /opt/tomcat9
+sh /opt/tomcat9/bin/startup.sh
 # create a soft link to start and stop tomcat
 sudo ln -s /opt/tomcat10/bin/startup.sh /usr/bin/starttomcat
 sudo ln -s /opt/tomcat10/bin/shutdown.sh /usr/bin/stoptomcat
