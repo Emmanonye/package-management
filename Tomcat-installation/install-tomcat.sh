@@ -18,8 +18,8 @@ sudo mv apache-tomcat-9.0.65 tomcat9
 sudo chown ec2-user -R /opt/tomcat9
 sh /opt/tomcat9/bin/startup.sh
 # create a soft link to start and stop tomcat
-sudo ln -s /opt/tomcat10/bin/startup.sh /usr/bin/starttomcat
-sudo ln -s /opt/tomcat10/bin/shutdown.sh /usr/bin/stoptomcat
+sudo ln -s /opt/tomcat9/bin/startup.sh /usr/bin/starttomcat
+sudo ln -s /opt/tomcat9/bin/shutdown.sh /usr/bin/stoptomcat
 sudo yum update -y
 starttomcat
 echo "end on tomcat installation"
